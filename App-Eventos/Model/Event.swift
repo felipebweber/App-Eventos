@@ -1,11 +1,11 @@
 //
-//  EventModel.swift
+//  EventDataResponse.swift
 //  App-Eventos
 //
 
 import Foundation
 
-struct EventModel {
+struct Event: Codable {
     let description: String
     let date: Int
     let image: String
@@ -15,12 +15,6 @@ struct EventModel {
     let title: String
     let id: String
     
-    let idPeople: String
-    let eventIdPeople: String
-    let namePeople: String
-    let picture: String
-    
-    let idCupons: String
-    let eventIdCupons: String
-    let discount: Int
+    let people: [People]
+    let cupons: [Cupons]
 }

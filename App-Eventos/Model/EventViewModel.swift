@@ -11,9 +11,8 @@ final class EventViewModel {
 
 extension EventViewModel {
     func fetchEvent() {
-        eventApi.fetchEventRequest { (result, data) in
+        eventApi.fetchEventRequest { (result, events) in
             if result {
-//                self.parseJSON(data)
             } else {
                 print("Erro de conexão")
             }
