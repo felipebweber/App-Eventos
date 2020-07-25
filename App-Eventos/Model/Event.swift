@@ -15,6 +15,6 @@ struct Event: Codable {
     let title: String
     let id: String
     
-    let people: [People]
+    let people: [Person]
     let cupons: [Cupons]
 }

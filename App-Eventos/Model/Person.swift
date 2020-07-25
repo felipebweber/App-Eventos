@@ -1,11 +1,11 @@
 //
-//  People.swift
+//  Person.swift
 //  App-Eventos
 //
 
 import Foundation
 
-struct People: Codable {
+struct Person: Codable {
     let id: String
     let eventId: String
     let name: String
