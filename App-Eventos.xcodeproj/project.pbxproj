@@ -13,6 +13,7 @@
 		556E1A9F24CC590300A58FE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 556E1A9D24CC590300A58FE6 /* Main.storyboard */; };
 		556E1AA124CC590300A58FE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 556E1AA024CC590300A58FE6 /* Assets.xcassets */; };
 		556E1AA424CC590300A58FE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 556E1AA224CC590300A58FE6 /* LaunchScreen.storyboard */; };
+		556E1AAC24CC5E1200A58FE6 /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556E1AAB24CC5E1200A58FE6 /* DescriptionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		556E1AA024CC590300A58FE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		556E1AA324CC590300A58FE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		556E1AA524CC590300A58FE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		556E1AAB24CC5E1200A58FE6 /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				556E1A9724CC590300A58FE6 /* AppDelegate.swift */,
 				556E1A9924CC590300A58FE6 /* SceneDelegate.swift */,
 				556E1A9B24CC590300A58FE6 /* EventsViewController.swift */,
+				556E1AAB24CC5E1200A58FE6 /* DescriptionViewController.swift */,
 				556E1A9D24CC590300A58FE6 /* Main.storyboard */,
 				556E1AA024CC590300A58FE6 /* Assets.xcassets */,
 				556E1AA224CC590300A58FE6 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				556E1A9C24CC590300A58FE6 /* EventsViewController.swift in Sources */,
+				556E1AAC24CC5E1200A58FE6 /* DescriptionViewController.swift in Sources */,
 				556E1A9824CC590300A58FE6 /* AppDelegate.swift in Sources */,
 				556E1A9A24CC590300A58FE6 /* SceneDelegate.swift in Sources */,
 			);
