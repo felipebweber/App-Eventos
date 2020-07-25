@@ -20,6 +20,8 @@
 		556E1AB524CC78B100A58FE6 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556E1AB424CC78B100A58FE6 /* Event.swift */; };
 		556E1AB924CCABEE00A58FE6 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556E1AB824CCABEE00A58FE6 /* Person.swift */; };
 		556E1ABB24CCAC0F00A58FE6 /* Cupons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556E1ABA24CCAC0F00A58FE6 /* Cupons.swift */; };
+		55FCD92B24CCBCBC0049558C /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCD92A24CCBCBC0049558C /* EventsTableViewCell.swift */; };
+		55FCD93024CCE6F90049558C /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCD92F24CCE6F90049558C /* UIImageView+Extension.swift */; };
 		7AE15886C7F2E17DFAF8CCAF /* Pods_App_Eventos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F868C43D922C9B65079B0573 /* Pods_App_Eventos.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +42,8 @@
 		556E1AB424CC78B100A58FE6 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		556E1AB824CCABEE00A58FE6 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		556E1ABA24CCAC0F00A58FE6 /* Cupons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cupons.swift; sourceTree = "<group>"; };
+		55FCD92A24CCBCBC0049558C /* EventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
+		55FCD92F24CCE6F90049558C /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		57BB09B221BA87AEF3433568 /* Pods-App-Eventos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App-Eventos.release.xcconfig"; path = "Target Support Files/Pods-App-Eventos/Pods-App-Eventos.release.xcconfig"; sourceTree = "<group>"; };
 		F868C43D922C9B65079B0573 /* Pods_App_Eventos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App_Eventos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -86,6 +90,7 @@
 		556E1A9624CC590300A58FE6 /* App-Eventos */ = {
 			isa = PBXGroup;
 			children = (
+				55FCD92E24CCE6E00049558C /* Common */,
 				55FCD92924CCB97F0049558C /* View */,
 				556E1ABC24CCB70000A58FE6 /* ViewModel */,
 				556E1AAF24CC6DF700A58FE6 /* Model */,
@@ -122,10 +127,19 @@
 			isa = PBXGroup;
 			children = (
 				556E1A9B24CC590300A58FE6 /* EventsViewController.swift */,
+				55FCD92A24CCBCBC0049558C /* EventsTableViewCell.swift */,
 				556E1AAB24CC5E1200A58FE6 /* DescriptionViewController.swift */,
 				556E1AAD24CC6A9C00A58FE6 /* ConfirmEventViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		55FCD92E24CCE6E00049558C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				55FCD92F24CCE6F90049558C /* UIImageView+Extension.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		DB02EF181159E47EAA8C88B9 /* Frameworks */ = {
@@ -252,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				556E1AB324CC786B00A58FE6 /* EventViewModel.swift in Sources */,
+				55FCD93024CCE6F90049558C /* UIImageView+Extension.swift in Sources */,
 				556E1ABB24CCAC0F00A58FE6 /* Cupons.swift in Sources */,
 				556E1A9C24CC590300A58FE6 /* EventsViewController.swift in Sources */,
 				556E1AAE24CC6A9C00A58FE6 /* ConfirmEventViewController.swift in Sources */,
@@ -261,6 +276,7 @@
 				556E1AB524CC78B100A58FE6 /* Event.swift in Sources */,
 				556E1A9824CC590300A58FE6 /* AppDelegate.swift in Sources */,
 				556E1A9A24CC590300A58FE6 /* SceneDelegate.swift in Sources */,
+				55FCD92B24CCBCBC0049558C /* EventsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
