@@ -16,6 +16,9 @@
 		556E1AAC24CC5E1200A58FE6 /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556E1AAB24CC5E1200A58FE6 /* DescriptionViewController.swift */; };
 		556E1AAE24CC6A9C00A58FE6 /* ConfirmEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556E1AAD24CC6A9C00A58FE6 /* ConfirmEventViewController.swift */; };
 		556E1AB124CC6F0400A58FE6 /* EventAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556E1AB024CC6F0400A58FE6 /* EventAPI.swift */; };
+		556E1AB324CC786B00A58FE6 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556E1AB224CC786B00A58FE6 /* EventManager.swift */; };
+		556E1AB524CC78B100A58FE6 /* EventDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556E1AB424CC78B100A58FE6 /* EventDataResponse.swift */; };
+		556E1AB724CC868C00A58FE6 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556E1AB624CC868C00A58FE6 /* EventModel.swift */; };
 		7AE15886C7F2E17DFAF8CCAF /* Pods_App_Eventos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F868C43D922C9B65079B0573 /* Pods_App_Eventos.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +35,9 @@
 		556E1AAB24CC5E1200A58FE6 /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
 		556E1AAD24CC6A9C00A58FE6 /* ConfirmEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmEventViewController.swift; sourceTree = "<group>"; };
 		556E1AB024CC6F0400A58FE6 /* EventAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAPI.swift; sourceTree = "<group>"; };
+		556E1AB224CC786B00A58FE6 /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
+		556E1AB424CC78B100A58FE6 /* EventDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataResponse.swift; sourceTree = "<group>"; };
+		556E1AB624CC868C00A58FE6 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		57BB09B221BA87AEF3433568 /* Pods-App-Eventos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App-Eventos.release.xcconfig"; path = "Target Support Files/Pods-App-Eventos/Pods-App-Eventos.release.xcconfig"; sourceTree = "<group>"; };
 		F868C43D922C9B65079B0573 /* Pods_App_Eventos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App_Eventos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -96,6 +102,9 @@
 			isa = PBXGroup;
 			children = (
 				556E1AB024CC6F0400A58FE6 /* EventAPI.swift */,
+				556E1AB224CC786B00A58FE6 /* EventManager.swift */,
+				556E1AB424CC78B100A58FE6 /* EventDataResponse.swift */,
+				556E1AB624CC868C00A58FE6 /* EventModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -223,10 +232,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				556E1AB324CC786B00A58FE6 /* EventManager.swift in Sources */,
+				556E1AB724CC868C00A58FE6 /* EventModel.swift in Sources */,
 				556E1A9C24CC590300A58FE6 /* EventsViewController.swift in Sources */,
 				556E1AAE24CC6A9C00A58FE6 /* ConfirmEventViewController.swift in Sources */,
 				556E1AAC24CC5E1200A58FE6 /* DescriptionViewController.swift in Sources */,
 				556E1AB124CC6F0400A58FE6 /* EventAPI.swift in Sources */,
+				556E1AB524CC78B100A58FE6 /* EventDataResponse.swift in Sources */,
 				556E1A9824CC590300A58FE6 /* AppDelegate.swift in Sources */,
 				556E1A9A24CC590300A58FE6 /* SceneDelegate.swift in Sources */,
 			);
