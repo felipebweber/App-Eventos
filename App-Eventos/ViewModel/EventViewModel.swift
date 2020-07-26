@@ -17,7 +17,7 @@ final class EventViewModel {
     private var eventApi = EventAPI()
     
     init() {
-       bindOutput()
+        bindOutput()
     }
     
     func bindOutput() {

@@ -22,6 +22,11 @@
 		556E1ABB24CCAC0F00A58FE6 /* Cupons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556E1ABA24CCAC0F00A58FE6 /* Cupons.swift */; };
 		55FCD92B24CCBCBC0049558C /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCD92A24CCBCBC0049558C /* EventsTableViewCell.swift */; };
 		55FCD93024CCE6F90049558C /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCD92F24CCE6F90049558C /* UIImageView+Extension.swift */; };
+		55FCD93224CCFB810049558C /* DescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCD93124CCFB810049558C /* DescriptionViewModel.swift */; };
+		55FCD93424CCFCAA0049558C /* FetchError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCD93324CCFCAA0049558C /* FetchError.swift */; };
+		55FCD93624CD0D220049558C /* CheckInAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCD93524CD0D220049558C /* CheckInAPI.swift */; };
+		55FCD93824CD10D60049558C /* CheckInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCD93724CD10D60049558C /* CheckInViewModel.swift */; };
+		55FCD93A24CD20140049558C /* CheckInStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCD93924CD20140049558C /* CheckInStatus.swift */; };
 		7AE15886C7F2E17DFAF8CCAF /* Pods_App_Eventos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F868C43D922C9B65079B0573 /* Pods_App_Eventos.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +49,11 @@
 		556E1ABA24CCAC0F00A58FE6 /* Cupons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cupons.swift; sourceTree = "<group>"; };
 		55FCD92A24CCBCBC0049558C /* EventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
 		55FCD92F24CCE6F90049558C /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		55FCD93124CCFB810049558C /* DescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewModel.swift; sourceTree = "<group>"; };
+		55FCD93324CCFCAA0049558C /* FetchError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchError.swift; sourceTree = "<group>"; };
+		55FCD93524CD0D220049558C /* CheckInAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInAPI.swift; sourceTree = "<group>"; };
+		55FCD93724CD10D60049558C /* CheckInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewModel.swift; sourceTree = "<group>"; };
+		55FCD93924CD20140049558C /* CheckInStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInStatus.swift; sourceTree = "<group>"; };
 		57BB09B221BA87AEF3433568 /* Pods-App-Eventos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App-Eventos.release.xcconfig"; path = "Target Support Files/Pods-App-Eventos/Pods-App-Eventos.release.xcconfig"; sourceTree = "<group>"; };
 		F868C43D922C9B65079B0573 /* Pods_App_Eventos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App_Eventos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -108,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				556E1AB024CC6F0400A58FE6 /* EventAPI.swift */,
+				55FCD93524CD0D220049558C /* CheckInAPI.swift */,
 				556E1AB424CC78B100A58FE6 /* Event.swift */,
 				556E1AB824CCABEE00A58FE6 /* Person.swift */,
 				556E1ABA24CCAC0F00A58FE6 /* Cupons.swift */,
@@ -119,6 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				556E1AB224CC786B00A58FE6 /* EventViewModel.swift */,
+				55FCD93124CCFB810049558C /* DescriptionViewModel.swift */,
+				55FCD93724CD10D60049558C /* CheckInViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -138,6 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				55FCD92F24CCE6F90049558C /* UIImageView+Extension.swift */,
+				55FCD93324CCFCAA0049558C /* FetchError.swift */,
+				55FCD93924CD20140049558C /* CheckInStatus.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -267,15 +282,20 @@
 			files = (
 				556E1AB324CC786B00A58FE6 /* EventViewModel.swift in Sources */,
 				55FCD93024CCE6F90049558C /* UIImageView+Extension.swift in Sources */,
+				55FCD93824CD10D60049558C /* CheckInViewModel.swift in Sources */,
 				556E1ABB24CCAC0F00A58FE6 /* Cupons.swift in Sources */,
 				556E1A9C24CC590300A58FE6 /* EventsViewController.swift in Sources */,
 				556E1AAE24CC6A9C00A58FE6 /* ConfirmEventViewController.swift in Sources */,
 				556E1AB924CCABEE00A58FE6 /* Person.swift in Sources */,
 				556E1AAC24CC5E1200A58FE6 /* DescriptionViewController.swift in Sources */,
 				556E1AB124CC6F0400A58FE6 /* EventAPI.swift in Sources */,
+				55FCD93624CD0D220049558C /* CheckInAPI.swift in Sources */,
 				556E1AB524CC78B100A58FE6 /* Event.swift in Sources */,
 				556E1A9824CC590300A58FE6 /* AppDelegate.swift in Sources */,
+				55FCD93224CCFB810049558C /* DescriptionViewModel.swift in Sources */,
 				556E1A9A24CC590300A58FE6 /* SceneDelegate.swift in Sources */,
+				55FCD93424CCFCAA0049558C /* FetchError.swift in Sources */,
+				55FCD93A24CD20140049558C /* CheckInStatus.swift in Sources */,
 				55FCD92B24CCBCBC0049558C /* EventsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

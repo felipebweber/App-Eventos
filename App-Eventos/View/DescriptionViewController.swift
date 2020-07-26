@@ -6,8 +6,8 @@
 import UIKit
 import RxSwift
 
-class DescriptionViewController: UIViewController {
-
+final class DescriptionViewController: UIViewController {
+    
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var titleEventLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -25,7 +25,7 @@ class DescriptionViewController: UIViewController {
         bind()
     }
     
-    func bind() {
+    private func bind() {
         descriptionViewModel?.event.asObservable()
             .subscribe(onNext: { event in
                 if let event = event {
@@ -34,13 +34,17 @@ class DescriptionViewController: UIViewController {
             }).disposed(by: bag)
     }
     
-    func configureView(event: Event) {
+    private func configureView(event: Event) {
         titleEventLabel.text = event.title
         priceLabel.text = "\(event.price)"
     }
     
     @IBAction func checkIn(_ sender: Any) {
-        let controller = storyboard?.instantiateViewController(identifier: "checkIn") as! ConfirmEventViewController
-        self.navigationController?.pushViewController(controller, animated: true)
+        if let eventId = descriptionViewModel?.eventId {
+            let controller = storyboard?.instantiateViewController(identifier: "checkIn") as! ConfirmEventViewController
+            let checkInViewModel = CheckInViewModel(eventId: eventId)
+            controller.checkInViewModel = checkInViewModel
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
     }
 }

@@ -378,9 +378,6 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Finalizar Cadastro"/>
-                                                <connections>
-                                                    <action selector="finalizeRegistration:" destination="ZEA-QA-cFL" eventType="touchUpInside" id="bjo-q9-4rz"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -427,6 +424,7 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="Sza-vk-Dyx" id="u3V-s3-bZH"/>
+                        <outlet property="finishCheckIn" destination="JlH-ni-Ioi" id="IMF-Fp-foh"/>
                         <outlet property="nameTextField" destination="a1m-gJ-RC2" id="XaQ-JU-bJ2"/>
                         <outlet property="titleEventLabel" destination="4mJ-tk-ABU" id="qVr-vA-ZsO"/>
                     </connections>

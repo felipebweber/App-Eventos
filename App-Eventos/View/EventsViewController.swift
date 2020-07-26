@@ -7,14 +7,14 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class EventsViewController: UIViewController {
+final class EventsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
     private let eventsViewModel = EventViewModel()
     
-    let disp = DisposeBag()
-
+    private let disp = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         eventsViewModel.fetchEvents()

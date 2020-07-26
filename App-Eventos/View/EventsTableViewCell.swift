@@ -5,7 +5,7 @@
 
 import UIKit
 
-class EventsTableViewCell: UITableViewCell {
+final class EventsTableViewCell: UITableViewCell {
     
     static var Identifier = "EventsTableViewCell"
     
@@ -26,7 +26,7 @@ class EventsTableViewCell: UITableViewCell {
             eventImage.setImage(with: URL(string: event.image))
         }
     }
-
+    
 }
 
 extension Double {
