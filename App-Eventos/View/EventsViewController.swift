@@ -23,7 +23,8 @@ final class EventsViewController: UIViewController {
     }
     
     private func configureTableView() {
-        tableView.rowHeight = 140
+        tableView.rowHeight = 104
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
     }
     
     private func bind() {

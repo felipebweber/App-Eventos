@@ -47,8 +47,11 @@ final class DescriptionViewController: UIViewController {
     }
     
     private func configureView(event: Event) {
+        image.setImage(with: URL(string: event.image))
         titleEventLabel.text = event.title
-        priceLabel.text = "\(event.price)"
+        dateLabel.text = "Dia e hora: \(Double(event.date).dateFormat())"
+        personLabel.text = "Responsável: \(event.people.first?.name ?? "Não informado")"
+        priceLabel.text = "R$ \(event.price)"
     }
     
     @IBAction func checkIn(_ sender: Any) {
