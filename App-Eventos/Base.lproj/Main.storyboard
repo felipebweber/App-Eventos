@@ -112,7 +112,7 @@
         <!--Description View Controller-->
         <scene sceneID="suA-C4-uQS">
             <objects>
-                <viewController id="U24-Ke-A6W" customClass="DescriptionViewController" customModule="App_Eventos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="description" id="U24-Ke-A6W" customClass="DescriptionViewController" customModule="App_Eventos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TCs-vg-ugs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -315,7 +315,7 @@
         <!--Confirm Event View Controller-->
         <scene sceneID="2VB-bD-qKY">
             <objects>
-                <viewController id="ZEA-QA-cFL" customClass="ConfirmEventViewController" customModule="App_Eventos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="checkIn" id="ZEA-QA-cFL" customClass="ConfirmEventViewController" customModule="App_Eventos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jcd-iv-kNB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

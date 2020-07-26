@@ -11,13 +11,13 @@ class EventsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private let eventViewModel = EventViewModel()
+    private let eventsViewModel = EventViewModel()
     
     let disp = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        eventViewModel.fetchEvent()
+        eventsViewModel.fetchEvents()
         configureTableView()
         bind()
     }
@@ -27,10 +27,22 @@ class EventsViewController: UIViewController {
     }
     
     private func bind() {
-        eventViewModel.events.asObservable()
+        eventsViewModel.events.asObservable()
             .bind(to: tableView.rx.items(cellIdentifier: EventsTableViewCell.Identifier, cellType: EventsTableViewCell.self)) { row, event, cell in
                 cell.event = event
         }.disposed(by: disp)
+        
+        tableView.rx.itemSelected
+            .subscribe(onNext: { [weak self] indexPath in
+                print("tapped \(indexPath.row)")
+                self?.tableView.deselectRow(at: indexPath, animated: true)
+                if let event = self?.eventsViewModel.events.value[indexPath.row] {
+                    let controller = self?.storyboard?.instantiateViewController(identifier: "description") as! DescriptionViewController
+                    let descriptionViewModel = DescriptionViewModel(eventId: event.id)
+                    controller.descriptionViewModel = descriptionViewModel
+                    
+                    self?.navigationController?.pushViewController(controller, animated: true)
+                }
+            }).disposed(by: disp)
     }
 }
-

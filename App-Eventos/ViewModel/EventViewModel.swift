@@ -16,10 +16,6 @@ final class EventViewModel {
     
     private var eventApi = EventAPI()
     
-    enum FetchError: Error {
-        case error
-    }
-    
     init() {
        bindOutput()
     }
@@ -27,13 +23,13 @@ final class EventViewModel {
     func bindOutput() {
         eventsPublish.asObserver()
             .bind(to: events)
-        .disposed(by: bag)
+            .disposed(by: bag)
     }
 }
 
 extension EventViewModel {
-    func fetchEvent() {
-        eventApi.fetchEventRequest { (result, events) in
+    func fetchEvents() {
+        eventApi.fetchEvents { result, events in
             if result {
                 self.eventsPublish.onNext(events)
             } else {
