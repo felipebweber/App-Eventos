@@ -16,6 +16,8 @@ final class DescriptionViewController: UIViewController {
     @IBOutlet weak var localLabel: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
     
+    private var shareEventText = ""
+    
     var descriptionViewModel: DescriptionViewModel?
     private let bag = DisposeBag()
     
@@ -23,6 +25,7 @@ final class DescriptionViewController: UIViewController {
         super.viewDidLoad()
         descriptionViewModel?.fetchEvent()
         bind()
+        bindShared()
     }
     
     private func bind() {
@@ -30,6 +33,15 @@ final class DescriptionViewController: UIViewController {
             .subscribe(onNext: { event in
                 if let event = event {
                     self.configureView(event: event)
+                }
+            }).disposed(by: bag)
+    }
+    
+    private func bindShared() {
+        descriptionViewModel?.event.asObservable()
+            .subscribe(onNext: { event in
+                if let event = event {
+                    self.shareEventText = "\(String(describing: event.title))\n \(String(describing: event.description))\n It will happen in: \(String(describing: Double(event.date).dateFormat()))\n Event price: R$ \(event.price)"
                 }
             }).disposed(by: bag)
     }
@@ -47,4 +59,10 @@ final class DescriptionViewController: UIViewController {
             self.navigationController?.pushViewController(controller, animated: true)
         }
     }
+    
+    @IBAction func shareButton(_ sender: Any) {
+        let activityViewController = UIActivityViewController(activityItems: [shareEventText], applicationActivities: nil)
+                present(activityViewController, animated: true)
+    }
+    
 }

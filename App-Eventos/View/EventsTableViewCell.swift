@@ -28,12 +28,3 @@ final class EventsTableViewCell: UITableViewCell {
     }
     
 }
-
-extension Double {
-    func dateFormat() -> String {
-        let date = Date(timeIntervalSince1970: self/1000)
-        let dayTimePeriodFormatter = DateFormatter()
-        dayTimePeriodFormatter.dateFormat = "dd MMM YY, hh:mm a"
-        return dayTimePeriodFormatter.string(from: date as Date)
-    }
-}
