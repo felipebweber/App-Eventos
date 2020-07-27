@@ -44,7 +44,7 @@ final class CheckInViewModel {
     }
 }
 
-extension CheckInViewModel {    
+extension CheckInViewModel {
     func checkIn(name: String, email: String) {
         checkInApi.checkIn(eventId: eventId, name: name, email: email) { checkInStatus in
             switch checkInStatus {

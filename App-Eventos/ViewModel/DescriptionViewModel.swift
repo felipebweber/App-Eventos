@@ -35,7 +35,7 @@ extension DescriptionViewModel {
                 guard let event = event else { return self.errorPublish.onNext(FetchError.itemNotFound) }
                 self.eventPublish.onNext(event)
             } else {
-                self.errorPublish.onNext(FetchError.error)
+                self.errorPublish.onNext(FetchError.failNetworking)
             }
         }
     }

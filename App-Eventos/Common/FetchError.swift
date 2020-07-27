@@ -6,7 +6,7 @@
 import Foundation
 
 enum FetchError: Error {
-    case error
+    case none
     case failNetworking
     case itemNotFound
 }
