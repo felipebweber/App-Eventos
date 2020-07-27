@@ -13,7 +13,7 @@ final class DescriptionViewModel {
     
     private let eventApi = EventAPI()
     let event = BehaviorRelay<Event?>(value: nil)
-    private let bag = DisposeBag()
+    private let disposeBag = DisposeBag()
     let eventId: String
     
     init(eventId: String) {
@@ -24,7 +24,7 @@ final class DescriptionViewModel {
     func bindOutput() {
         eventPublish.asObserver()
             .bind(to: event)
-            .disposed(by: bag)
+            .disposed(by: disposeBag)
     }
 }
 

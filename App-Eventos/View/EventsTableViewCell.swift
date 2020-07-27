@@ -9,10 +9,10 @@ final class EventsTableViewCell: UITableViewCell {
     
     static var Identifier = "EventsTableViewCell"
     
-    @IBOutlet weak var titleEventLabel: UILabel!
-    @IBOutlet weak var namePersonLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var eventImage: UIImageView!
+    @IBOutlet private weak var titleEventLabel: UILabel!
+    @IBOutlet private weak var namePersonLabel: UILabel!
+    @IBOutlet private weak var dateLabel: UILabel!
+    @IBOutlet private weak var eventImage: UIImageView!
     
     var event: Event? {
         didSet {

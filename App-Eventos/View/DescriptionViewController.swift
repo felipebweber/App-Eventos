@@ -8,18 +8,18 @@ import RxSwift
 
 final class DescriptionViewController: UIViewController {
     
-    @IBOutlet weak var image: UIImageView!
-    @IBOutlet weak var titleEventLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var personLabel: UILabel!
-    @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var localLabel: UILabel!
-    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet private weak var image: UIImageView!
+    @IBOutlet private weak var titleEventLabel: UILabel!
+    @IBOutlet private weak var dateLabel: UILabel!
+    @IBOutlet private weak var personLabel: UILabel!
+    @IBOutlet private weak var priceLabel: UILabel!
+    @IBOutlet private weak var localLabel: UILabel!
+    @IBOutlet private weak var descriptionTextView: UITextView!
     
     private var shareEventText = ""
     
     var descriptionViewModel: DescriptionViewModel?
-    private let bag = DisposeBag()
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,16 +34,16 @@ final class DescriptionViewController: UIViewController {
                 if let event = event {
                     self.configureView(event: event)
                 }
-            }).disposed(by: bag)
+            }).disposed(by: disposeBag)
     }
     
     private func bindShared() {
         descriptionViewModel?.event.asObservable()
             .subscribe(onNext: { event in
                 if let event = event {
-                    self.shareEventText = "\(String(describing: event.title))\n \(String(describing: event.description))\n It will happen in: \(String(describing: Double(event.date).dateFormat()))\n Event price: R$ \(event.price)"
+                    self.shareEventText = "\(String(describing: event.title))\n \(String(describing: event.description))\n Vai acontecer em: \(String(describing: Double(event.date).dateFormat()))\n Valor do evento: R$ \(event.price)"
                 }
-            }).disposed(by: bag)
+            }).disposed(by: disposeBag)
     }
     
     private func configureView(event: Event) {
@@ -54,7 +54,7 @@ final class DescriptionViewController: UIViewController {
         priceLabel.text = "R$ \(event.price)"
     }
     
-    @IBAction func checkIn(_ sender: Any) {
+    @IBAction private func checkIn(_ sender: Any) {
         if let eventId = descriptionViewModel?.eventId {
             let controller = storyboard?.instantiateViewController(identifier: "checkIn") as! ConfirmEventViewController
             let checkInViewModel = CheckInViewModel(eventId: eventId)
@@ -63,7 +63,7 @@ final class DescriptionViewController: UIViewController {
         }
     }
     
-    @IBAction func shareButton(_ sender: Any) {
+    @IBAction private func shareButton(_ sender: Any) {
         let activityViewController = UIActivityViewController(activityItems: [shareEventText], applicationActivities: nil)
                 present(activityViewController, animated: true)
     }

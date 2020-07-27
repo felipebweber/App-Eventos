@@ -9,11 +9,11 @@ import RxCocoa
 
 final class EventsViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     
     private let eventsViewModel = EventViewModel()
     
-    private let disp = DisposeBag()
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,14 +40,14 @@ final class EventsViewController: UIViewController {
                     break
                 }
             })
-            .disposed(by: disp)
+            .disposed(by: disposeBag)
     }
     
     private func bind() {
         eventsViewModel.events.asObservable()
             .bind(to: tableView.rx.items(cellIdentifier: EventsTableViewCell.Identifier, cellType: EventsTableViewCell.self)) { row, event, cell in
                 cell.event = event
-        }.disposed(by: disp)
+        }.disposed(by: disposeBag)
         
         tableView.rx.itemSelected
             .subscribe(onNext: { [weak self] indexPath in
@@ -58,7 +58,7 @@ final class EventsViewController: UIViewController {
                     controller.descriptionViewModel = descriptionViewModel
                     self?.navigationController?.pushViewController(controller, animated: true)
                 }
-            }).disposed(by: disp)
+            }).disposed(by: disposeBag)
     }
 
     fileprivate func showError(_ fetchError: FetchError) {

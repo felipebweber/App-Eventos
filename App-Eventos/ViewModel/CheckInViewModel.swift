@@ -6,12 +6,11 @@
 import Foundation
 import RxSwift
 import RxCocoa
-import Alamofire
 
 final class CheckInViewModel {
     private let checkInPublish: PublishSubject<CheckInStatus> = PublishSubject()
     let check = BehaviorRelay<CheckInStatus>(value: .none)
-    let bag = DisposeBag()
+    let disposeBag = DisposeBag()
     
     private let eventId: String
     var name: Driver<String>?
@@ -28,10 +27,11 @@ final class CheckInViewModel {
     func bindOutput() {
         checkInPublish.asObserver()
             .bind(to: check)
-            .disposed(by: bag)
+            .disposed(by: disposeBag)
     }
     
     func validate() {
+        let emailValidador = EmailValidator()
         let nameValid = name!
             .distinctUntilChanged()
             .throttle(.milliseconds(300))
@@ -39,7 +39,8 @@ final class CheckInViewModel {
         let emailValid = email!
             .distinctUntilChanged()
             .throttle(.milliseconds(300))
-            .map { $0.utf8.count > 3 }
+            .map { emailValidador.validate($0) }
+            
         credentialsValid = Driver.combineLatest(nameValid, emailValid) { $0 && $1 }
     }
 }
@@ -58,4 +59,3 @@ extension CheckInViewModel {
         }
     }
 }
-

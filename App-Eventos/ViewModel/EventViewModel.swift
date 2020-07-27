@@ -14,7 +14,7 @@ final class EventViewModel {
     let events = BehaviorRelay<[Event]>(value: [])
     let fetchError = BehaviorRelay<FetchError>(value: .none)
     
-    private let bag = DisposeBag()
+    private let disposeBag = DisposeBag()
     
     private var eventApi = EventAPI()
     
@@ -26,13 +26,13 @@ final class EventViewModel {
     func bindOutput() {
         eventsPublish.asObserver()
             .bind(to: events)
-            .disposed(by: bag)
+            .disposed(by: disposeBag)
     }
     
     func bindOutputFetchError() {
         errorPublish.asObserver()
             .bind(to: fetchError)
-            .disposed(by: bag)
+            .disposed(by: disposeBag)
     }
 }
 

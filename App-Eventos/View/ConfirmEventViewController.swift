@@ -8,13 +8,13 @@ import RxSwift
 
 final class ConfirmEventViewController: UIViewController {
     
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var finishCheckIn: UIButton!
+    @IBOutlet private weak var nameTextField: UITextField!
+    @IBOutlet private weak var emailTextField: UITextField!
+    @IBOutlet private weak var finishCheckIn: UIButton!
     
     var checkInViewModel: CheckInViewModel?
     
-    private let dis = DisposeBag()
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,23 +34,29 @@ final class ConfirmEventViewController: UIViewController {
         gr.numberOfTouchesRequired = 1
         view.addGestureRecognizer(gr)
         gr.rx.event.asObservable()
-            .subscribe(onNext: { [unowned self] _ in
-                self.hideKeyboard()
+            .subscribe(onNext: { [weak self] _ in
+                self?.hideKeyboard()
             })
-            .disposed(by: dis)
+            .disposed(by: disposeBag)
         
         checkInViewModel?.check.asObservable()
-            .subscribe(onNext: { [unowned self] checkInStatus in
+            .subscribe(onNext: { [weak self] checkInStatus in
                 switch checkInStatus {
                 case .none:
                     break
                 case .success:
-                    self.showError(true)
+                    self?.showError(true)
                 case .fail:
-                    self.showError(false)
+                    self?.showError(false)
                 }
             })
-            .disposed(by: dis)
+            .disposed(by: disposeBag)
+        
+        checkInViewModel?.credentialsValid?
+            .drive(onNext: { [weak self] valid in
+                self?.finishCheckIn.isEnabled = valid
+            })
+            .disposed(by: disposeBag)
         
         finishCheckIn.rx.tap
             .withLatestFrom(checkInViewModel!.credentialsValid!)
@@ -58,18 +64,18 @@ final class ConfirmEventViewController: UIViewController {
             .bind { _ in
                 self.checkInViewModel?.checkIn(name: self.nameTextField.text!, email: self.emailTextField.text!)
         }
-        .disposed(by: dis)
+        .disposed(by: disposeBag)
     }
     
     fileprivate func showError(_ success: Bool) {
         let title: String
         let message: String
         if success {
-            title = "Success"
-            message = "Check in successfully"
+            title = "Atenção"
+            message = "Check-in realizado com sucesso"
         } else {
-            title = "Fail"
-            message = "Check in cannot be done"
+            title = "Atenção"
+            message = "Não foi possível realizar o check-in"
         }
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
