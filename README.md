@@ -6,7 +6,7 @@
 * RxSwift.
 * A biblioteca Alamofire para a requisição dos dados.
 * Para serialização de dados foi utilizado o Codable.
-* Para os testes de rede foi utilizado o OHHTTPStubs e para os demais testes foi utilizado XCTest, RxTest e RxBlocking.
+* Para os testes de rede foi utilizado o OHHTTPStubs e para os demais testes foi utilizado XCTest.
 
 ## Características:
 - O App possui layout responsivo para os diferentes tamanhos de tela.

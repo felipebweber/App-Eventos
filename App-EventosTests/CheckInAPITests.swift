@@ -29,7 +29,6 @@ class CheckInAPITests: XCTestCase {
         let name = "Fulano de Tal"
         let email = "email@email.com.br"
         
-        //MARK: - Given
         stub(condition: { (requestURl) -> Bool in
             return requestURl.url?.absoluteString.contains("checkin")  ?? false
         }) { (response) -> HTTPStubsResponse in
@@ -39,14 +38,12 @@ class CheckInAPITests: XCTestCase {
         let exception = self.expectation(description: "calling Api failed!")
         var expectedResult: CheckInStatus = .none
         
-        //MARK: - When
         let worker:CheckInAPI? = CheckInAPI()
         worker?.checkIn(eventId: eventId, name: name, email: email, completion: { checkInStatus in
             expectedResult = checkInStatus
             exception.fulfill()
         })
         
-        //MARK: - Then
         waitForExpectations(timeout: 5, handler: nil)
         XCTAssertEqual(expectedResult, CheckInStatus.success)
         XCTAssertNotEqual(expectedResult, CheckInStatus.fail)

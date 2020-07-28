@@ -5,8 +5,6 @@
 
 import XCTest
 import RxSwift
-import RxTest
-import RxBlocking
 import RxCocoa
 @testable import App_Eventos
 

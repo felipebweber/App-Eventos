@@ -29,7 +29,6 @@ class EventAPITests: XCTestCase {
         guard let data = try? Data(contentsOf: url) else { return }
         guard let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]] else { return }
         
-        //MARK: - Given
         stub(condition: { (requestURl) -> Bool in
             return requestURl.url?.absoluteString.contains("events")  ?? false
         }) { (response) -> HTTPStubsResponse in
@@ -40,7 +39,6 @@ class EventAPITests: XCTestCase {
         let exception = self.expectation(description: "calling Api failed!")
         var expectedResult: Bool = false
         
-        //MARK: - When
         let worker: EventAPI? = EventAPI()
         worker?.fetchEvents(completion: { (result, events) in
             expectedResponse = events
@@ -48,7 +46,6 @@ class EventAPITests: XCTestCase {
             exception.fulfill()
         })
         
-        //MARK: - Then
         waitForExpectations(timeout: 15, handler: nil)
         XCTAssertNotNil(expectedResponse)
         XCTAssertTrue(expectedResult)
