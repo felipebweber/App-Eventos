@@ -16,6 +16,8 @@ final class DescriptionViewModel {
     private let disposeBag = DisposeBag()
     let eventId: String
     
+    /// Initializes a new view model
+    /// - Parameter eventId: a `String` with the event id
     init(eventId: String) {
         self.eventId = eventId
         bindOutput()

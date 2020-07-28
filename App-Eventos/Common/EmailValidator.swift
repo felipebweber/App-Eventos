@@ -6,7 +6,9 @@
 import Foundation
 
 final class EmailValidator {
-    
+    ///Validates the email
+    /// - Parameter input: a `String` with the email to be validated
+    /// - Returns: a `Bool` with  `true` if succeeds otherwise `false`
     func validate(_ input: String) -> Bool {
         guard
             let regex = try? NSRegularExpression(

@@ -30,12 +30,12 @@ final class EventsViewController: UIViewController {
     private func bindFetchError() {
         eventsViewModel.fetchError.asObservable()
             .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { [unowned self] fetchError in
+            .subscribe(onNext: { [weak self] fetchError in
                 switch fetchError {
                 case .failNetworking:
-                    self.showError(.failNetworking)
+                    self?.showError(.failNetworking)
                 case .none:
-                    self.bind()
+                    self?.bind()
                 case .itemNotFound:
                     break
                 }

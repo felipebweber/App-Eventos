@@ -5,7 +5,12 @@
 
 import Foundation
 
-struct Event: Codable {
+struct Event: Codable, Equatable {
+    
+    static func == (lhs: Event, rhs: Event) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
     let description: String
     let date: Int
     let image: String

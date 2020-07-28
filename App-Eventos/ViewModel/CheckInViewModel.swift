@@ -24,7 +24,7 @@ final class CheckInViewModel {
         bindOutput()
     }
     
-    func bindOutput() {
+    private func bindOutput() {
         checkInPublish.asObserver()
             .bind(to: check)
             .disposed(by: disposeBag)
