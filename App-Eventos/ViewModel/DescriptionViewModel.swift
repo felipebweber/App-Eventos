@@ -11,7 +11,7 @@ final class DescriptionViewModel {
     private let eventPublish: PublishSubject<Event> = PublishSubject()
     private let errorPublish: PublishSubject<FetchError> = PublishSubject()
     
-    private let eventApi = EventAPI()
+    private var eventApi: EventAPI!
     
     let event = BehaviorRelay<Event?>(value: nil)
     let fetchError = BehaviorRelay<FetchError>(value: .none)
@@ -21,19 +21,20 @@ final class DescriptionViewModel {
     
     /// Initializes a new view model
     /// - Parameter eventId: a `String` with the event id
-    init(eventId: String) {
+    /// - Parameter eventApi: a `EventAPI`
+    init(eventId: String, eventApi: EventAPI) {
         self.eventId = eventId
+        self.eventApi = eventApi
         bindOutput()
-        bindOutputFetchError()
     }
     
-    func bindOutput() {
+    private func bindOutput() {
         eventPublish.asObserver()
             .bind(to: event)
             .disposed(by: disposeBag)
     }
     
-    func bindOutputFetchError() {
+    private func bindOutputFetchError() {
         errorPublish.asObserver()
             .bind(to: fetchError)
             .disposed(by: disposeBag)

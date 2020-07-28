@@ -6,7 +6,7 @@
 import Foundation
 import Alamofire
 
-final class CheckInAPI {
+class CheckInAPI {
     
     private let checkInURL = "https://5b840ba5db24a100142dcd8c.mockapi.io/api/checkin"
     

@@ -16,20 +16,23 @@ final class EventViewModel {
     
     private let disposeBag = DisposeBag()
     
-    private var eventApi = EventAPI()
+    private var eventApi: EventAPI!
     
-    init() {
+    /// Initializes a new view model
+    /// - Parameter eventApi: a `EventAPI`
+    init(eventApi: EventAPI) {
+        self.eventApi = eventApi
         bindOutputFetchError()
         bindOutput()
     }
     
-    func bindOutput() {
+    private func bindOutput() {
         eventsPublish.asObserver()
             .bind(to: events)
             .disposed(by: disposeBag)
     }
     
-    func bindOutputFetchError() {
+    private func bindOutputFetchError() {
         errorPublish.asObserver()
             .bind(to: fetchError)
             .disposed(by: disposeBag)

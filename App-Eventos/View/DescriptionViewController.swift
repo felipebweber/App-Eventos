@@ -73,7 +73,7 @@ final class DescriptionViewController: UIViewController {
     @IBAction private func checkIn(_ sender: Any) {
         if let eventId = descriptionViewModel?.eventId {
             let controller = storyboard?.instantiateViewController(identifier: "checkIn") as! ConfirmEventViewController
-            let checkInViewModel = CheckInViewModel(eventId: eventId)
+            let checkInViewModel = CheckInViewModel(eventId: eventId, checkInApi: CheckInAPI())
             controller.checkInViewModel = checkInViewModel
             self.navigationController?.pushViewController(controller, animated: true)
         }

@@ -11,7 +11,7 @@ final class EventsViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     
-    private let eventsViewModel = EventViewModel()
+    private let eventsViewModel = EventViewModel(eventApi: EventAPI())
     
     private let disposeBag = DisposeBag()
     
@@ -54,7 +54,7 @@ final class EventsViewController: UIViewController {
                 self?.tableView.deselectRow(at: indexPath, animated: true)
                 if let event = self?.eventsViewModel.events.value[indexPath.row] {
                     let controller = self?.storyboard?.instantiateViewController(identifier: "description") as! DescriptionViewController
-                    let descriptionViewModel = DescriptionViewModel(eventId: event.id)
+                    let descriptionViewModel = DescriptionViewModel(eventId: event.id, eventApi: EventAPI())
                     controller.descriptionViewModel = descriptionViewModel
                     self?.navigationController?.pushViewController(controller, animated: true)
                 }

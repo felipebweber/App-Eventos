@@ -6,7 +6,7 @@
 import Foundation
 import Alamofire
 
-final class EventAPI: NSObject {
+class EventAPI: NSObject {
     
     private let baseURL = "https://5b840ba5db24a100142dcd8c.mockapi.io/api/events"
     

@@ -17,10 +17,14 @@ final class CheckInViewModel {
     var email: Driver<String>?
     var credentialsValid: Driver<Bool>?
     
-    let checkInApi = CheckInAPI()
+    private let checkInApi: CheckInAPI!
     
-    init(eventId: String) {
+    /// Initializes a new view model
+    /// - Parameter eventId: a `String` with the event id
+    /// - Parameter checkInApi: a `CheckInAPI`
+    init(eventId: String, checkInApi: CheckInAPI) {
         self.eventId = eventId
+        self.checkInApi = checkInApi
         bindOutput()
     }
     

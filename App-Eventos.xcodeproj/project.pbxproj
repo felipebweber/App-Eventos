@@ -20,6 +20,11 @@
 		556E1AB524CC78B100A58FE6 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556E1AB424CC78B100A58FE6 /* Event.swift */; };
 		556E1AB924CCABEE00A58FE6 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556E1AB824CCABEE00A58FE6 /* Person.swift */; };
 		556E1ABB24CCAC0F00A58FE6 /* Cupons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556E1ABA24CCAC0F00A58FE6 /* Cupons.swift */; };
+		5580998F24D08E5900A2A85E /* MockEventAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5580998E24D08E5900A2A85E /* MockEventAPI.swift */; };
+		5580999124D08EC200A2A85E /* EventViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5580999024D08EC200A2A85E /* EventViewModelTests.swift */; };
+		5580999324D091C700A2A85E /* MockCheckInAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5580999224D091C700A2A85E /* MockCheckInAPI.swift */; };
+		5580999524D0920A00A2A85E /* CheckInViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5580999424D0920A00A2A85E /* CheckInViewModelTests.swift */; };
+		5580999724D0932C00A2A85E /* DescriptionViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5580999624D0932C00A2A85E /* DescriptionViewModelTests.swift */; };
 		55AFB50124CE23670044F5CE /* DateFormat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AFB50024CE23670044F5CE /* DateFormat+Extension.swift */; };
 		55CD2B8024CF4C8900A1F276 /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CD2B7F24CF4C8900A1F276 /* EmailValidator.swift */; };
 		55E1ACCF24CF7DD000B218F4 /* EventAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E1ACCE24CF7DD000B218F4 /* EventAPITests.swift */; };
@@ -65,6 +70,11 @@
 		556E1AB424CC78B100A58FE6 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		556E1AB824CCABEE00A58FE6 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		556E1ABA24CCAC0F00A58FE6 /* Cupons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cupons.swift; sourceTree = "<group>"; };
+		5580998E24D08E5900A2A85E /* MockEventAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEventAPI.swift; sourceTree = "<group>"; };
+		5580999024D08EC200A2A85E /* EventViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModelTests.swift; sourceTree = "<group>"; };
+		5580999224D091C700A2A85E /* MockCheckInAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCheckInAPI.swift; sourceTree = "<group>"; };
+		5580999424D0920A00A2A85E /* CheckInViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewModelTests.swift; sourceTree = "<group>"; };
+		5580999624D0932C00A2A85E /* DescriptionViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewModelTests.swift; sourceTree = "<group>"; };
 		55AFB50024CE23670044F5CE /* DateFormat+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormat+Extension.swift"; sourceTree = "<group>"; };
 		55CD2B7F24CF4C8900A1F276 /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
 		55E1ACC224CF7BAB00B218F4 /* App-EventosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "App-EventosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,9 +190,14 @@
 		55E1ACC324CF7BAB00B218F4 /* App-EventosTests */ = {
 			isa = PBXGroup;
 			children = (
+				5580998E24D08E5900A2A85E /* MockEventAPI.swift */,
+				5580999024D08EC200A2A85E /* EventViewModelTests.swift */,
 				55E1ACCE24CF7DD000B218F4 /* EventAPITests.swift */,
 				55E1ACD224CF9CCF00B218F4 /* CheckInAPITests.swift */,
 				55E1ACD424CFAC4B00B218F4 /* EmailValidatorTests.swift */,
+				5580999224D091C700A2A85E /* MockCheckInAPI.swift */,
+				5580999424D0920A00A2A85E /* CheckInViewModelTests.swift */,
+				5580999624D0932C00A2A85E /* DescriptionViewModelTests.swift */,
 				55E1ACC624CF7BAB00B218F4 /* Info.plist */,
 			);
 			path = "App-EventosTests";
@@ -435,7 +450,12 @@
 			files = (
 				55E1ACD524CFAC4B00B218F4 /* EmailValidatorTests.swift in Sources */,
 				55E1ACD324CF9CCF00B218F4 /* CheckInAPITests.swift in Sources */,
+				5580999324D091C700A2A85E /* MockCheckInAPI.swift in Sources */,
+				5580999124D08EC200A2A85E /* EventViewModelTests.swift in Sources */,
 				55E1ACCF24CF7DD000B218F4 /* EventAPITests.swift in Sources */,
+				5580999724D0932C00A2A85E /* DescriptionViewModelTests.swift in Sources */,
+				5580998F24D08E5900A2A85E /* MockEventAPI.swift in Sources */,
+				5580999524D0920A00A2A85E /* CheckInViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
