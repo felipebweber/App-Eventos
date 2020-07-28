@@ -13,8 +13,6 @@ target 'App-Eventos' do
     inherit! :search_paths
     # Pods for testing
     pod 'OHHTTPStubs/Swift'
-    pod 'RxBlocking'
-    pod 'RxTest'
     
   end
   

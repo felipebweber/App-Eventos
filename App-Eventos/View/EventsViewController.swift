@@ -69,7 +69,7 @@ final class EventsViewController: UIViewController {
             break
         case .failNetworking:
             title = "Erro de rede"
-            message = "Verifirique a conexão de rede"
+            message = "Verifique a conexão de rede"
         case .itemNotFound:
             break
         }

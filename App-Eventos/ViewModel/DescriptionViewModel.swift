@@ -9,10 +9,13 @@ import RxCocoa
 
 final class DescriptionViewModel {
     private let eventPublish: PublishSubject<Event> = PublishSubject()
-    private let errorPublish: PublishSubject<Error> = PublishSubject()
+    private let errorPublish: PublishSubject<FetchError> = PublishSubject()
     
     private let eventApi = EventAPI()
+    
     let event = BehaviorRelay<Event?>(value: nil)
+    let fetchError = BehaviorRelay<FetchError>(value: .none)
+    
     private let disposeBag = DisposeBag()
     let eventId: String
     
@@ -21,11 +24,18 @@ final class DescriptionViewModel {
     init(eventId: String) {
         self.eventId = eventId
         bindOutput()
+        bindOutputFetchError()
     }
     
     func bindOutput() {
         eventPublish.asObserver()
             .bind(to: event)
+            .disposed(by: disposeBag)
+    }
+    
+    func bindOutputFetchError() {
+        errorPublish.asObserver()
+            .bind(to: fetchError)
             .disposed(by: disposeBag)
     }
 }
