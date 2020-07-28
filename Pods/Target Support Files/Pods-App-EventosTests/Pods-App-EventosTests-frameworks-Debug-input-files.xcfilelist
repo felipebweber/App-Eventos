@@ -1,2 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-App-EventosTests/Pods-App-EventosTests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework
 ${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework
+${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework

@@ -4,6 +4,7 @@
 //
 
 import XCTest
+import RxBlocking
 @testable import App_Eventos
 import OHHTTPStubs
 
