@@ -7,13 +7,12 @@ target 'App-Eventos' do
   pod 'RxSwift'
   pod 'RxCocoa'
   use_frameworks!
-  
+
   # Pods for App-Eventos
   target 'App-EventosTests' do
     inherit! :search_paths
     # Pods for testing
     pod 'OHHTTPStubs/Swift'
-    pod 'RxBlocking'
   end
-  
+
 end
