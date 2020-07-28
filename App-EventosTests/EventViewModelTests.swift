@@ -26,6 +26,7 @@ class EventViewModelTests: XCTestCase {
     
     override func tearDown() {
         self.eventViewModel = nil
+        self.disposeBag = nil
         super.tearDown()
     }
     

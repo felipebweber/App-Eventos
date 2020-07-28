@@ -26,6 +26,7 @@ class DescriptionViewModelTests: XCTestCase {
     
     override func tearDown() {
         self.descriptionViewModel = nil
+        self.disposeBag = nil
         super.tearDown()
     }
     
